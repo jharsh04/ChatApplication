@@ -148,7 +148,10 @@ const Chat = () => {
   const [roomName, setRoomName] = useState("");//to track the Room name
 
   // Establish a socket connection for the component
-  const socket = useMemo(() => io("http://localhost:3000"), []);
+  /*const socket = useMemo(() => io("http://localhost:3000"), []);*/
+  const socket = useMemo(() => {
+    return io("https://your-backend-url.com");  // Update with your backend WebSocket URL
+  }, []);
 
   useEffect(() => {
     // Set up the socket connection and event listeners
