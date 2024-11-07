@@ -150,7 +150,7 @@ const Chat = () => {
   // Establish a socket connection for the component
   /*const socket = useMemo(() => io("http://localhost:3000"), []);*/
   const socket = useMemo(() => {
-    return io("https://your-backend-url.com");  // Update with your backend WebSocket URL
+    return io("http://localhost:10000/");  // Update with your backend WebSocket URL
   }, []);
 
   useEffect(() => {
