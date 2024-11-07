@@ -150,7 +150,7 @@ const Chat = () => {
   // Establish a socket connection for the component
   /*const socket = useMemo(() => io("http://localhost:3000"), []);*/
   const socket = useMemo(() => {
-    return io("http://localhost:10000/");  // Update with your backend WebSocket URL
+    return io("https://chatapplication-jj4h.onrender.com");  // Update with your backend WebSocket URL
   }, []);
 
   useEffect(() => {
