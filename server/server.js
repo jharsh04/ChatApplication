@@ -143,12 +143,17 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173/","https://chat-application-xi-umber.vercel.app/"],// Frontend URL
+    origin: "https://chat-application-xi-umber.vercel.app",// Frontend URL
     methods: ["GET", "POST"]
   }
 });
 
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: "https://chat-application-xi-umber.vercel.app",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 // Add a simple GET route to avoid 'Cannot GET /' error
 app.get('/', (req, res) => {
@@ -175,5 +180,4 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
 
